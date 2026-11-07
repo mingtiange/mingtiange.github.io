@@ -919,6 +919,13 @@ button {
 
 .yao-sides.single { grid-template-columns: 1fr; }
 
+.yao-side .tag .qu {
+  font-style: normal;
+  margin-left: .5em;
+  color: rgba(156, 59, 43, .78);
+  letter-spacing: .1em;
+}
+
 .yao-main {
   display: inline-block;
   margin-left: .7em;

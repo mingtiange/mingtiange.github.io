@@ -214,6 +214,7 @@ async function startCast(key) {
   result = cast(key, rng);
 
 
+
   try {
     await playCast(key, result, token);
   } catch (err) {
@@ -406,19 +407,23 @@ function yaoBlock(i, ben, zhi, isMain) {
   </article>`;
 }
 
-function yaoStillBlock(i, zhi, isMain) {
+function yaoStillBlock(i, ben, zhi, isMain) {
+  const b = ben.lines[i];
   const z = zhi.lines[i];
   const badge = isMain ? '<span class="yao-main">主</span>' : "";
-  return `<article class="yao-block fade-up">
-    <h4>${esc(z.title)}${badge}</h4>
-    <div class="yao-sides single">
+  const side = (hex, line, label, qu) => `
       <div class="yao-side">
-        <span class="tag">变卦 · ${esc(zhi.name)} · 不变之爻</span>
-        <p class="classic">${esc(z.text)}</p>
-        <p class="mini"><span class="lbl">象曰</span>${esc(z.xiang)}</p>
-        <p class="mini plain">${esc(z.plain)}</p>
-        <p class="mini plain"><span class="lbl">《象传》说：</span>${esc(z.xiangPlain)}</p>
-      </div>
+        <span class="tag">${label} · ${esc(hex.name)}${qu ? ' <em class="qu">取用</em>' : ""}</span>
+        <p class="classic">${esc(line.text)}</p>
+        <p class="mini"><span class="lbl">象曰</span>${esc(line.xiang)}</p>
+        <p class="mini plain">${esc(line.plain)}</p>
+        <p class="mini plain"><span class="lbl">《象传》说：</span>${esc(line.xiangPlain)}</p>
+      </div>`;
+  return `<article class="yao-block fade-up">
+    <h4>${esc(b.title)}${badge}</h4>
+    <div class="yao-sides">
+      ${side(ben, b, "本卦", false)}
+      ${side(zhi, z, "变卦", true)}
     </div>
   </article>`;
 }
@@ -466,10 +471,10 @@ function yaoSection(r, ben, zhi) {
     return `<section class="moving-head fade-up" style="--i:5">
       <h3>不变之爻</h3>
       <p>${n === 4
-        ? "四爻变，变为主；取变卦两不变之爻，下爻为主。"
-        : "五爻变，变为主；取变卦不变之一爻。"}</p>
+        ? "四爻变，变为主；取变卦两不变之爻，下爻为主。本卦、变卦并列，以便对照。"
+        : "五爻变，变为主；取变卦不变之一爻。本卦、变卦并列，以便对照。"}</p>
     </section>
-    ${still.map((i) => yaoStillBlock(i, zhi, i === main)).join("")}`;
+    ${still.map((i) => yaoStillBlock(i, ben, zhi, i === main)).join("")}`;
   }
 
   const main = n === 2 ? movingList[movingList.length - 1] : -1;
