@@ -148,7 +148,13 @@ function renderHome() {
       </a>`).join("")}
   </section>
 
-  <footer class="foot fade-up" style="--i:5">
+  <a class="gua-entry fade-up" style="--i:5" href="/gua/">
+    <span class="kicker">六十四卦</span>
+    <h3>卦辞 · 爻辞 · 白话</h3>
+    <p>逐卦查阅六十四卦的卦辞、彖传、大象与三百八十四爻。</p>
+  </a>
+
+  <footer class="foot fade-up" style="--i:6">
     <p>易 者 象 也 · 象 也 者 像 也</p>
   </footer>`;
 }
