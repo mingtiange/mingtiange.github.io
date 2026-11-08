@@ -81,6 +81,11 @@ PAGE = """<!DOCTYPE html>
 <meta name="twitter:description" content="__DESC__">
 <meta name="twitter:image" content="__BASE__/assets/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='92' fill='%23f4efe4'/%3E%3Cpath d='M100 38a62 62 0 1 1-44 106' fill='none' stroke='%231e1a15' stroke-width='18' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="观象">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/page.css">
 <script type="application/ld+json">__LDJSON__</script>
@@ -136,6 +141,7 @@ PAGE = """<!DOCTYPE html>
     <p>静 心 · 凝 神 · 问 易</p>
   </footer>
 </main>
+<script>if("serviceWorker"in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
 </body>
 </html>
 """
@@ -163,6 +169,11 @@ INDEX = """<!DOCTYPE html>
 <meta name="twitter:description" content="__DESC__">
 <meta name="twitter:image" content="__BASE__/assets/og.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='92' fill='%23f4efe4'/%3E%3Cpath d='M100 38a62 62 0 1 1-44 106' fill='none' stroke='%231e1a15' stroke-width='18' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="观象">
+<link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
 <link rel="stylesheet" href="/assets/css/style.css">
 <link rel="stylesheet" href="/assets/css/page.css">
 <script type="application/ld+json">__LDJSON__</script>
@@ -195,6 +206,7 @@ INDEX = """<!DOCTYPE html>
     <p>静 心 · 凝 神 · 问 易</p>
   </footer>
 </main>
+<script>if("serviceWorker"in navigator){addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})})}</script>
 </body>
 </html>
 """

@@ -21,6 +21,13 @@ addEventListener("pointermove", (e) => {
   lastX = e.clientX; lastY = e.clientY; lastT = t;
 }, { passive: true });
 
+/* Service Worker：PWA 离线缓存 */
+if ("serviceWorker" in navigator) {
+  addEventListener("load", () => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  });
+}
+
 /* ================= 启动 ================= */
 
 boot();
